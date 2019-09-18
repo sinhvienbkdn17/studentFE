@@ -7,7 +7,7 @@ import {Student} from './student';
   providedIn: 'root'
 })
 export class StudentService {
-  private baseUrl = 'http://192.168.1.85:8080/customer';
+  private baseUrl = 'http://localhost:8080/student';
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
@@ -17,7 +17,7 @@ export class StudentService {
 
   // get customer (student)
   getAll(): Observable<Student[]> {
-    return this.http.get<Student[]>(`${this.baseUrl}/list`);
+    return this.http.get<Student[]>(`${this.baseUrl}`);
   }
 
   getById(id: number): Observable<Student> {

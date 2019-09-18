@@ -13,10 +13,10 @@
     <td>{{student.id}}</td>
     <td>{{student.name}}</td>
     <td>{{student.age}}</td>
-    <td>{{student.address}} </td>
+    <td>{{student.birthday | date: 'dd/mm/yyyy'}} </td>
     <td>{{student.email}}</td>
-    <td ><a routerLink="" (click)="deleteStudent(student.id)" >DELETE</a></td>
     <td ><a routerLink="/student-edit/{{student.id}}">Edit</a></td>
+    <td ><a routerLink="" (click)="deleteStudent(student.id)" >DELETE</a></td>
   </tr>
   </tbody>
 </table>
