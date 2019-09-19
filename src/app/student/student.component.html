@@ -16,7 +16,7 @@
     <td>{{student.birthday | date: 'dd/mm/yyyy'}} </td>
     <td>{{student.email}}</td>
     <td ><a routerLink="/student-edit/{{student.id}}">Edit</a></td>
-    <td ><a routerLink="" (click)="deleteStudent(student.id)" >DELETE</a></td>
+    <td ><button class="btn btn-danger" (click)="deleteStudent(student.id)" >DELETE</button></td>
   </tr>
   </tbody>
 </table>

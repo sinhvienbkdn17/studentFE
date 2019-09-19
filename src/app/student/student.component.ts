@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {StudentService} from '../student.service';
 import {Student} from '../student';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -8,9 +9,8 @@ import {Student} from '../student';
   styleUrls: ['./student.component.css']
 })
 export class StudentComponent implements OnInit {
-
   studentList: Student[];
-  constructor(private studentService: StudentService) { }
+  constructor(private studentService: StudentService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getAllStudent();
@@ -24,7 +24,7 @@ export class StudentComponent implements OnInit {
   }
 
   deleteStudent(id: number) {
-
+    this.router.navigate(['student'], {relativeTo: this.route});
   }
 
 }

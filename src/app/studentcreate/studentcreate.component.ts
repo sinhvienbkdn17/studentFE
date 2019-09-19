@@ -13,21 +13,26 @@ export class StudentcreateComponent implements OnInit {
   studentForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private router: Router, private studenService: StudentService) { }
 
-  ngOnInit() {
+  createStudentForm() {
     this.studentForm = this.formBuilder.group({
       id: [],
-      name: ['', Validators.required],
-      age: ['', Validators.required],
-      email: ['', Validators.required],
-      birthday: ['', Validators.required]
+      name: [''],
+      age: [''],
+      email: [''],
+      birthday: [''],
     });
+  }
+
+  ngOnInit() {
+    this.createStudentForm();
   }
 
   onSubmit() {
     this.studenService.create(this.studentForm.value).subscribe(
       data => {
-        this.router.navigate(['student0']);
-    });
+        this.router.navigate(['student']);
+        console.log(this.studentForm.value);
+      });
   }
 
 }
