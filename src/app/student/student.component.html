@@ -13,10 +13,11 @@
     <td>{{student.id}}</td>
     <td>{{student.name}}</td>
     <td>{{student.age}}</td>
-    <td>{{student.birthday | date: 'dd/mm/yyyy'}} </td>
+    <td>{{student.birthday | date: 'dd/MM/yyyy'}} </td>
     <td>{{student.email}}</td>
-    <td ><a routerLink="/student-edit/{{student.id}}">Edit</a></td>
+    <td ><a class= "btn btn-warning" [routerLink]="[student.id]">Edit</a></td>
     <td ><button class="btn btn-danger" (click)="deleteStudent(student.id)" >DELETE</button></td>
   </tr>
   </tbody>
 </table>
+<!--<router-outlet></router-outlet>-->

@@ -24,7 +24,10 @@ export class StudentComponent implements OnInit {
   }
 
   deleteStudent(id: number) {
-    this.router.navigate(['student'], {relativeTo: this.route});
+    this.studentService.delete(id).subscribe(data => {
+      location.reload();
+      console.log(data);
+    });
   }
 
 }
